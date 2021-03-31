@@ -1,0 +1,98 @@
+@keyframes like {
+  50% {
+    transform: scale(1.8);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes wallpaper {
+  0% {
+    background: #19dcea;
+  }
+  100% {
+    background: #5dff2c;
+  }
+}
+
+.App {
+  &__dark {
+    &--runimg {
+      width: 10%;
+      animation-name: running;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      position: absolute;
+    }
+    &--bucle {
+      position: absolute;
+      width: 13%;
+      right: 90px;
+      top: 30px;
+      animation: blink-1 2s infinite linear;
+    }
+    &--personajes {
+      width: 10%;
+      position: absolute;
+      right: 100px;
+      top: 55px;
+      animation: personajes 2s infinite linear;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    &__dark {
+      &--bucle {
+        position: absolute;
+        width: 13%;
+        right: 0px;
+        top: 60px;
+        animation: blink-1 2s infinite linear;
+      }
+      &--personajes {
+        width: 10%;
+        position: absolute;
+        right: 0px;
+        top: 65px;
+      }
+    }
+  }
+}
+
+@keyframes blink-1 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes personajes {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes running {
+  0% {
+    left: 0px;
+  }
+  50% {
+    left: -300px;
+  }
+  90% {
+    left: 0px;
+  }
+}

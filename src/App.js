@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useContext, useState } from "react";
+import CharactersContext from "./context/CharactersContext";
+import ThemeContext from "./context/ThemeContext";
+import Characters from "./components/Characters";
+import Header from "./components/Header";
+import Efectos from "./components/Efectos";
+import "./sass/App.scss";
+import Footer from "./components/Footer";
 function App() {
+  const themeContext = useContext(ThemeContext);
+  const { theme } = themeContext;
+  const [characters, setCharacters] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CharactersContext.Provider value={{ characters, setCharacters }}>
+      <div className={theme ? "App" : "App__dark"}>
+        {theme === false && <Efectos />}
+
+        <Header />
+        <main>
+          <Characters />
+        </main>
+        <Footer />
+      </div>
+    </CharactersContext.Provider>
   );
 }
 

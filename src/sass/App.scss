@@ -1,0 +1,15 @@
+@import "../sass/_animation";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap");
+.App {
+  background-color: #85ffbd;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  position: relative;
+  font-family: inter;
+  &__dark {
+    background: linear-gradient(to right, #414345, #232526);
+  }
+}
+
+body {
+  margin: 0;
+}

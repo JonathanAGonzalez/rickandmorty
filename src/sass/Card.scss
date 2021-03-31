@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap");
+@import "./_animation";
+
+.container {
+  &__button {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+  }
+  &__card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+  }
+  &-card {
+    font-family: "Inter", sans-serif;
+    background: #f2f2f2;
+    border-radius: 15px;
+    text-align: center;
+    width: 250px;
+    margin: 100px 10px;
+    filter: drop-shadow(1px 0px 5px #222);
+    padding-top: 50px;
+    &__dark {
+      @extend .container-card;
+      background: #222;
+    }
+  }
+}
+
+.card {
+  &__name {
+    color: #d309d3;
+    font-size: 1.7rem;
+    margin: 10px;
+  }
+  &__header {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -52px;
+    left: 70px;
+    &--img {
+      width: 100%;
+      border-radius: 100px;
+    }
+  }
+  &__p--dark {
+    color: #f2f2f2;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: left;
+    margin: 0px 0px 10px 0px;
+    padding-left: 15px;
+  }
+  &__p {
+    color: #222;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: left;
+    margin: 0px 0px 10px 0px;
+    padding-left: 15px;
+  }
+  &__heart {
+    color: #222;
+    font-size: 2rem;
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    cursor: pointer;
+    transition: ease-in-out 0.6s;
+    &--like {
+      @extend .card__heart;
+      color: red;
+      animation-name: like;
+      animation-duration: 0.5s;
+      z-index: 10;
+    }
+    &--dark {
+      @extend .card__heart;
+      color: #f2f2f2;
+    }
+  }
+}
+
+.character {
+  &--alive {
+    color: green;
+  }
+  &--dead {
+    color: red;
+  }
+  &--unknow {
+    color: #045f5b;
+  }
+}
